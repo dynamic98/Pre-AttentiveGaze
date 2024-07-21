@@ -16,7 +16,7 @@
 - Data: To be released
 ---
 ### 2. Task and Gaze Stimuli
-<img width="800" alt="Task_and_Gaze_Stimuli" src="https://github.com/dynamic98/Pre-AttentiveGazeAuth/assets/98831107/75048462-8a36-42fd-9f8c-a87e1b49dea9">
+<img width="800" alt="Task_and_Gaze_Stimuli" src="https://github-production-user-asset-6210df.s3.amazonaws.com/98831107/340265856-75048462-8a36-42fd-9f8c-a87e1b49dea9.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240721%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240721T142509Z&X-Amz-Expires=300&X-Amz-Signature=cda2e9f65c85cd4d8662bcbe5067ae5369b00796ec067e8aa4bd155196c2f987&X-Amz-SignedHeaders=host&actor_id=43838273&key_id=0&repo_id=813592648">
 
 
 - **A visual search task** where targets (black circles) and distractors (dashed circles) are arranged in a circular pattern. 
@@ -70,7 +70,7 @@
 
 
 **Additional Explanation for fixation and saccade**
-<img width="800" alt="스크린샷 2024-06-17 오후 5 09 11" src="https://github.com/dynamic98/Pre-AttentiveGazeAuth/assets/98831107/980e21ce-ebd8-4474-a09e-08e201e09a07">
+<img width="800" alt="스크린샷 2024-06-17 오후 5 09 11" src="https://github-production-user-asset-6210df.s3.amazonaws.com/98831107/340228668-980e21ce-ebd8-4474-a09e-08e201e09a07.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240721%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240721T142557Z&X-Amz-Expires=300&X-Amz-Signature=64f1e721458559ced9aed289d4341244ac62e5cdbfc3a960d0d2811d601b84cb&X-Amz-SignedHeaders=host&actor_id=43838273&key_id=0&repo_id=813592648">
 
 
 In fixation section, 'duration' and 'dispersion' value is extracted. 
@@ -88,7 +88,7 @@ The number of each section is a 'count' value
 ### 6. Understandig Github Structure
 ##### Directory
 ```bash
-Pre-AttentiveGaze/
+Pre-AttentiveGazeAuth/
 ├── data/
 │   ├── PreAttentiveGaze/
 │   ├── MultipleVC.tsv
