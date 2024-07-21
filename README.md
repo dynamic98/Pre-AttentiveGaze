@@ -30,7 +30,7 @@
 
 
 ---
-### 4. Collected Gaze Features
+### 4. Pre-processed Gaze Features
 **(1) Raw Gaze**
  - Coordinate of gaze point (x1, y1, …, x84, y84), (120 Hz × 0.7 s = 84 samples)
 
