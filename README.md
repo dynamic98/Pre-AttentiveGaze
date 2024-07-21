@@ -6,7 +6,7 @@
 - [1. Project Introduction](#1-project-introduction)
 - [2. Task and Gaze Stimuli](#2-task-and-gaze-stimuli)
 - [3. Data Collection Envs](#3-data-collection-envs)
-- [4. Collected Gaze Features](#4-collected-gaze-features)
+- [4. Pre-processed Gaze Features](#4-pre-processed-gaze-features)
 - [5. Dev Envs](#5-dev-envs)
 - [6. Understandig Github Structure](#6-understandig-github-structure)
 
