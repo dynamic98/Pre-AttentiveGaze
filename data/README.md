@@ -1,10 +1,8 @@
-This data folder should include the raw dataset(PreAttentiveGaze dataset).
+This data folder should include the raw dataset(PreAttentiveGaze dataset).<br> 
+You need to download the dataset in the data folder.<br> 
+The download links will be available soon.<br> 
 
-You need to download the dataset in the data folder.
-
-The download links will be available soon.
-
-The datasest will be organized in the following hierarchical structure.
+The datasest will be organized in the following hierarchical structure. 
 
 ```bash
 data/
