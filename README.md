@@ -68,7 +68,7 @@
 **(7) Pupil**
  - Left pupil diameter: Pupil diameter of left eye
  - Right pupil diameter: Pupil diameter of right eye
- - Average pupil diameter: Average of left and right pupil diameter
+ - Filtered pupil diameter: Pupil diameter after applying pupil diameter filter (noise reduction by moving median)
 
 
 **Additional Explanation for fixation and saccade**
