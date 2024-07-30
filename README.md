@@ -26,7 +26,7 @@
 
 ---
 ### 3. Data Collection Envs
-<img width="800" alt="Data_Collection_Envs" src="https://github.com/user-attachments/assets/321bf858-0af9-4cc6-b315-ea5152ee567a">
+<img width="800" alt="Data_Collection_Envs" src="https://github-production-user-asset-6210df.s3.amazonaws.com/98831107/349906026-321bf858-0af9-4cc6-b315-ea5152ee567a.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240730%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240730T063729Z&X-Amz-Expires=300&X-Amz-Signature=4453a6a78c8292401e69058b5ea9beaa6eef1e751cdd7061723c1e6b6b806ef7&X-Amz-SignedHeaders=host&actor_id=43838273&key_id=0&repo_id=813592648">
 
 
 ---
