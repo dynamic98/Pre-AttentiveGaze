@@ -99,8 +99,9 @@ Pre-AttentiveGaze/
 │   └── Gaze Feature Dataset/
 │       ├── MultipleVC.tsv
 │       └── SingleVC.tsv
-├── Figure3.ipynb
 ├── Figure4.ipynb
+├── Figure5.ipynb
+├── Figure8.ipynb
 ├── main.ipynb
 ├── README.md
 ├── requirements.txt
