@@ -4,16 +4,16 @@ import numpy as np
 from sklearn.preprocessing import StandardScaler
 from .ML_util import statistic_calculation
 
-def data_preprocessing(data: pd.DataFrame):
+def data_preprocessing(data: pd.DataFrame, pupil_include: bool = True):
     data_x = pd.DataFrame(data['x'].tolist(), columns=naming_columns("x", 84))
     data_y = pd.DataFrame(data['y'].tolist(), columns=naming_columns("y", 84))
-    data_velocity = pd.DataFrame(data['velocity'].tolist(), columns=naming_columns("velocity", 83))
-    data_angle = pd.DataFrame(data['angle'].tolist(), columns=naming_columns("angle", 83))
+    data_velocity = pd.DataFrame(data['gaze_velocity'].tolist(), columns=naming_columns("gaze_velocity", 83))
+    data_angle = pd.DataFrame(data['gaze_angle'].tolist(), columns=naming_columns("gaze_angle", 83))
     data_mfcc = pd.DataFrame(data['mfcc'].tolist(), columns = naming_columns("mfcc", 12))
-    data_left_pupil = pd.DataFrame(data['left_pupil'].tolist(), columns=naming_columns("left_pupil", 84))
-    data_right_pupil = pd.DataFrame(data['right_pupil'].tolist(), columns=naming_columns("right_pupil", 84))
-    data_filtered_pupil = pd.DataFrame(data['filtered_pupil'].tolist(), columns=naming_columns("filtered_pupil", 84))
-    data_eyetype = pd.DataFrame(data['eye_type'].tolist(), columns=naming_columns("eye_type", 84))
+    data_left_pupil = pd.DataFrame(data['left_pupil_diameter'].tolist(), columns=naming_columns("left_pupil_diameter", 84))
+    data_right_pupil = pd.DataFrame(data['right_pupil_diameter'].tolist(), columns=naming_columns("right_pupil_diameter", 84))
+    data_filtered_pupil = pd.DataFrame(data['filtered_pupil_diameter'].tolist(), columns=naming_columns("filtered_pupil_diameter", 84))
+    data_eyetype = pd.DataFrame(data['eye_movement_type'].tolist(), columns=naming_columns("eye_movement_type", 84))
     data_fixation_duration = pd.DataFrame(data["fixation_duration"].apply(statistic_calculation).tolist(), columns=naming_columns("fixation_duration", 4))
     data_fixation_dispersion = pd.DataFrame(data["fixation_dispersion"].apply(statistic_calculation).tolist(), columns=naming_columns("fixation_dispersion", 4))
     data_saccade_duration = pd.DataFrame(data["saccade_duration"].apply(statistic_calculation).tolist(), columns=naming_columns("saccade_duration", 4))
@@ -22,13 +22,24 @@ def data_preprocessing(data: pd.DataFrame):
     data_saccade_amplitude = pd.DataFrame(data["saccade_amplitude"].apply(statistic_calculation).tolist(), columns=naming_columns("saccade_amplitude", 4))
     data_scalar = data[['path_length', 'fixation_count', 'saccade_count','reaction_time', 'session', 'participant', 'stimuli_index']]
     
-    processed_data = pd.concat([data_x, data_y, data_velocity, data_angle, data_mfcc, data_left_pupil, data_right_pupil, 
-                                data_filtered_pupil, data_eyetype, data_fixation_duration, data_fixation_dispersion, data_saccade_duration, 
-                                data_saccade_dispersion, data_saccade_velocity, data_saccade_amplitude, data_scalar], axis=1)
-    
+    processed_data = pd.concat([data_x, data_y, data_velocity, data_angle, data_mfcc,
+                                data_left_pupil, data_right_pupil, data_filtered_pupil,
+                                data_eyetype, data_fixation_duration, data_fixation_dispersion,
+                                data_saccade_duration, data_saccade_dispersion, data_saccade_velocity,
+                                data_saccade_amplitude, data_scalar
+                                ], axis=1)
+
     processed_data = processed_data.apply(pd.to_numeric, errors='coerce')
     processed_data = processed_data.dropna(axis=0)
+
+    if not pupil_include:
+        columns_to_drop = [col for col in processed_data.columns if col.startswith('left_pupil_diameter') or
+                        col.startswith('right_pupil_diameter') or
+                        col.startswith('filtered_pupil_diameter')]
+        processed_data = processed_data.drop(columns=columns_to_drop, errors='ignore')
+        
     processed_data = processed_data.sample(frac=1, random_state=5).reset_index(drop=True)
+    
     return processed_data
 
 def naming_columns(name, length):
@@ -42,12 +53,12 @@ def z_score_normalization(data: pd.DataFrame, mean_std: dict = None):
     groups = {
         'x': [f'x{i}' for i in range(84)],
         'y': [f'y{i}' for i in range(84)],
-        'velocity': [f'velocity{i}' for i in range(83)],
-        'angle': [f'angle{i}' for i in range(83)],
-        'left_pupil': [f'left_pupil{i}' for i in range(84)],
-        'right_pupil': [f'right_pupil{i}' for i in range(84)],
-        'filtered_pupil': [f'filtered_pupil{i}' for i in range(84)],
-        'eye_type': [f'eye_type{i}' for i in range(84)]
+        'gaze_velocity': [f'gaze_velocity{i}' for i in range(83)],
+        'gaze_angle': [f'gaze_angle{i}' for i in range(83)],
+        'left_pupil_diameter': [f'left_pupil_diameter{i}' for i in range(84)],
+        'right_pupil_diameter': [f'right_pupil_diameter{i}' for i in range(84)],
+        'filtered_pupil_diameter': [f'filtered_pupil_diameter{i}' for i in range(84)],
+        'eye_movement_type': [f'eye_movement_type{i}' for i in range(84)]
     }
 
     # List of all columns in the dataset

@@ -32,7 +32,8 @@
 ---
 ### 4. Collected Gaze Features
 **(1) Raw Gaze**
- - Coordinate of gaze point (x1, y1, …, x84, y84), (120 Hz × 0.7 s = 84 samples)
+ - X: Corresponding to Gaze point X (x1, …, x84) 
+ - Y: Corresponding to Gaze point Y (y1, …, y84) 
 
    
 **(2) Eye Movement**
@@ -45,13 +46,13 @@
  - Path length: Length of path traveled in screen
  - Gaze velocity: Velocity of path traveled in screen
  - Gaze angle: Angle with centroid of prev
-
+ - Eye movement type: Type of eye movement event classified by the I-VT filter; Fixation: 1, Saccade: 2, else: 0
    
 **(4) Fixation**
  - Reaction time: Time until the first fixation is made outside the cross point (equal to the first fixation time)
  - Fixation duration: Duration per fixation
  - Fixation dispersion: Spatial spread during a fixation
- - Fixation count: Number of fixations
+ - Fixation count: Number of fixation intervals identified within 84 sampled gaze points
    
    
 **(5) Saccade**
@@ -59,7 +60,7 @@
  - Saccade velocity: Angular velocity per saccade
  - Saccade amplitude: Angular distance per saccade
  - Saccade dispersion: Spatial spread during a saccade
- - Saccade count: Numbers of saccades
+ - Saccade count: Number of saccade intervals identified within 84 sampled gaze points
    
 **(6) MFCC**
  - 12 Mel-frequency ceptral coefficients for overall stimuli
@@ -68,7 +69,7 @@
 **(7) Pupil**
  - Left pupil diameter: Pupil diameter of left eye
  - Right pupil diameter: Pupil diameter of right eye
- - Average pupil diameter: Average of left and right pupil diameter
+ - Filtered pupil diameter: Pupil diameter after applying pupil diameter
 
 
 **Additional Explanation for fixation and saccade**
@@ -90,11 +91,14 @@ The number of each section is a 'count' value
 ### 6. Understandig Github Structure
 ##### Directory
 ```bash
-Pre-AttentiveGazeAuth/
+Pre-AttentiveGaze/
 ├── data/
-│   ├── PreAttentiveGaze/
-│   ├── MultipleVC.tsv
-│   └── SingleVC.tsv
+│   ├── Raw Dataset/
+│   │   ├── Trial data/
+│   │   └── Validation data.tsv
+│   └── Gaze Feature Dataset/
+│       ├── MultipleVC.tsv
+│       └── SingleVC.tsv
 ├── Figure3.ipynb
 ├── Figure4.ipynb
 ├── main.ipynb
