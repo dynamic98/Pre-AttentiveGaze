@@ -1,18 +1,6 @@
 # Pre-AttentiveGaze: gaze-based authentication dataset with momentary visual interactions
 
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](http://creativecommons.org/licenses/by/4.0/)
-## Citation
-
-If you use this dataset, please cite:
-
-**Jeon, J., Noh, YG., Kim, J. et al.**  
-Pre-AttentiveGaze: gaze-based authentication dataset with momentary visual interactions.  
-*Scientific Data*, **12**, 263 (2025).  
-[DOI: 10.1038/s41597-025-04538-3](https://doi.org/10.1038/s41597-025-04538-3)
-
-### Subjects
-- Electrical and Electronic Engineering
-- Research Data
 
 
 ### Index 
@@ -184,6 +172,17 @@ For level 0 in `LevelDictionary_SingleVC.json`:
 ---
 
 
+## Citation
 
+If you use this dataset, please cite:
+
+**Jeon, J., Noh, YG., Kim, J. et al.**  
+Pre-AttentiveGaze: gaze-based authentication dataset with momentary visual interactions.  
+*Scientific Data*, **12**, 263 (2025).  
+[DOI: 10.1038/s41597-025-04538-3](https://doi.org/10.1038/s41597-025-04538-3)
+
+#### Subjects
+- Electrical and Electronic Engineering
+- Research Data
 
 
