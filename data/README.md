@@ -1,6 +1,6 @@
 This data folder should include the Raw Dataset and Gaze Feature Dataset (PreAttentiveGaze dataset).<br> 
 You need to download the dataset in the data folder.<br> 
-The download links will be available soon.<br> 
+The download links: https://doi.org/10.6084/m9.fgshare.28001453 <br> 
 
 The datasest will be organized in the following hierarchical structure. 
 
